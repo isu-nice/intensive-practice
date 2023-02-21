@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Ai_V1 {
     private static final String SYSTEM = "[System]";
     private static final String INFO = "[안내]";
-    private static final String ERROR = "[에러]";
     private static final int A = 2;
     private static final int B = 1;
 

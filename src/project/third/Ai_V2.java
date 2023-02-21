@@ -50,6 +50,4 @@ public class Ai_V2 {
             System.out.println();
         }
     }
-
-
 }
