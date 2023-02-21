@@ -32,6 +32,8 @@ public class Ai_V2 {
         int b = scanner.nextInt();
         System.out.println("=".repeat(30));
         System.out.println();
+
+        scanner.close();
         // 이전 버전과 달리 다수의 '광고비'를 '배열'로 정의합니다.
         final double[] advertisingFees = {580.0, 700.0, 810.0, 840.0};
         // 반복문을 활용하여 광고비 배열을 출력합니다.
