@@ -36,8 +36,10 @@ public class MyStorage {
                     prod_input(scanner);
                     break;
                 case 2:
+                    prod_remove(scanner);
                     break;
                 case 3:
+                    prod_amount_add(scanner);
                     break;
                 case 4:
                 case 5:
@@ -47,6 +49,14 @@ public class MyStorage {
                     continue;
             }
         }
+    }
+
+    private static void prod_amount_add(Scanner scanner) {
+
+    }
+
+    private static void prod_remove(Scanner scanner) {
+
     }
 
     private static void prod_input(Scanner scanner) {
