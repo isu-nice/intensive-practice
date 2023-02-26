@@ -45,7 +45,8 @@ public class MyStorage {
                     prod_amount_remove(scanner);
                     break;
                 case 5:
-
+                    compute(scanner);
+                    break;
                 case 6:
                     exit();
                     break;
@@ -54,6 +55,10 @@ public class MyStorage {
                     continue;
             }
         }
+    }
+
+    private static void compute(Scanner scanner) {
+
     }
 
     private static void exit() {
