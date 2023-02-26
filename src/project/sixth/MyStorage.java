@@ -42,13 +42,31 @@ public class MyStorage {
                     prod_amount_add(scanner);
                     break;
                 case 4:
+                    prod_amount_remove(scanner);
+                    break;
                 case 5:
+                    compute(scanner);
+                    break;
                 case 6:
+                    exit();
+                    break;
                 default:
                     System.out.println("[ERROR] 잘못된 입력입니다.");
                     continue;
             }
         }
+    }
+
+    private static void compute(Scanner scanner) {
+
+    }
+
+    private static void exit() {
+
+    }
+
+    private static void prod_amount_remove(Scanner scanner) {
+
     }
 
     private static void prod_amount_add(Scanner scanner) {
