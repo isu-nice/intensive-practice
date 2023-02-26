@@ -45,12 +45,18 @@ public class MyStorage {
                     prod_amount_remove(scanner);
                     break;
                 case 5:
+                    exit();
+                    break;
                 case 6:
                 default:
                     System.out.println("[ERROR] 잘못된 입력입니다.");
                     continue;
             }
         }
+    }
+
+    private static void exit() {
+
     }
 
     private static void prod_amount_remove(Scanner scanner) {
