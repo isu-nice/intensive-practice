@@ -45,7 +45,7 @@ public class MyStorage {
                     prod_amount_decrease(scanner, products);
                     break;
                 case 5:
-                    prod_search(scanner, products);
+                    prod_search();
                     break;
                 case 6:
                     exit();
@@ -64,8 +64,8 @@ public class MyStorage {
     }
 
     // 5. 재고 조회
-    private static void prod_search(Scanner scanner, Map<String, Integer> products) {
-
+    private static void prod_search() {
+        printProductNamesAndAmount();
     }
 
     // 4. 제품 출고
