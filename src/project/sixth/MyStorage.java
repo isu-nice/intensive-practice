@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MyStorage {
     private static final String SYSTEM = "[System] ";
     private static final String CLEAR = "[Clear] ";
+    private static final String POINT = "> ";
     private static final String CONTOUR = "-".repeat(30);
     private static final int REGISTER_QUANTITY = 5;
 
@@ -121,12 +122,12 @@ public class MyStorage {
         System.out.println(SYSTEM + "현재 등록된 제품 목록 ▼");
 
         for (String name : products.keySet()) {
-            System.out.println("> " + name);
+            System.out.println(POINT + name);
         }
 
         int count = products.size();
         while (count < REGISTER_QUANTITY) {
-            System.out.println("> 등록 가능");
+            System.out.println(POINT + "등록 가능");
             count++;
         }
         System.out.println(CONTOUR);
@@ -136,13 +137,13 @@ public class MyStorage {
         System.out.println(SYSTEM + "현재 등록된 제품 및 수량 ▼");
 
         for (String name : products.keySet()) {
-            System.out.print("> " + name + " : ");
+            System.out.print(POINT + name + " : ");
             System.out.println(products.get(name) + "개");
         }
 
         int count = products.size();
         while (count < REGISTER_QUANTITY) {
-            System.out.println("> 등록 가능 : 0 개");
+            System.out.println(POINT + "등록 가능 : 0 개");
             count++;
         }
     }
