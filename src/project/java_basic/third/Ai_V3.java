@@ -1,4 +1,4 @@
-package third;
+package java_basic.third;
 
 public class Ai_V3 {
     private static final String INFO = "[안내]";

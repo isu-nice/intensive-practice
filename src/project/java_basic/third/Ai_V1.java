@@ -1,4 +1,4 @@
-package third;
+package java_basic.third;
 
 import java.util.Scanner;
 
