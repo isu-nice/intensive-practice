@@ -63,7 +63,7 @@ class Character {
         System.out.println();
         System.out.printf(INFO, "생성된 유닛 정보는 다음과 같습니다.");
         System.out.printf(INFO, String.format("%s 유닛이 게임에 참여했습니다.", user[0]));
-        for(int i = 1; i < UNIT_NUMBER; i++){
+        for (int i = 1; i < UNIT_NUMBER; i++) {
             System.out.println(UNITS[i] + " : " + user[i]);
         }
         System.out.println("=".repeat(40));
@@ -74,12 +74,14 @@ class Character {
      * Integer.parseInt() : 정수형태로 전환합니다.
      */
     int[] user_info_int(String[] info) {
-        //TODO:
         // 같은 형식의 반환을 위해 배열 선언
-
+        int[] info_int = new int[UNIT_NUMBER - 1];
         // 배열의 값을 하나씩 꺼내 정수형태로 전환합니다.
-        return null;
+        for (int i = 0; i < UNIT_NUMBER - 1; i++) {
+            info_int[i] = Integer.parseInt(info[i + 1]);
+        }
 
+        return info_int;
     }
 
 
@@ -91,6 +93,17 @@ class Character {
         // 조건 1. 적군의 체력이 0 이하면 [유닛 제거] 가 됩니다.
         // 조건 2. 적군 체력이 0 이하가 아니라면 공격을 성공적으로 수행합니다.
         // 공격 정책 수식 : 적군 체력 -= 아군 유닛 공격력 / 적군 유닛 방어력
-        //TODO:
+        System.out.println("-".repeat(40));
+
+        while (enemy[2] > 0) {
+            System.out.printf(INFO, String.format("[%s]유닛이 [공격] 하였습니다.", this.name));
+            enemy[2] -= (me_info_int[0] / enemy[1]);
+            System.out.printf(INFO, String.format("상대 유닛의 남은 [체력]은 %d 입니다.", enemy[2]));
+            System.out.println("-".repeat(40));
+        }
+
+        System.out.printf(INFO, "더 이상 공격할 수 없습니다.");
+        System.out.println();
+        System.out.printf(INFO, "상대 유닛이 제거되었습니다.");
     }
 }

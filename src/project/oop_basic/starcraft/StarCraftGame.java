@@ -7,11 +7,17 @@ public class StarCraftGame {
         System.out.println(INFO + "TRPG 스타크래프트 시작합니다.");
 
         Character mine = new Character();
-        String[] info_mine = mine.user_create(false);
-        mine.user_print(info_mine);
+        int[] mine_info = characterIntInfo(mine, false);
 
         Character opponent = new Character();
-        String[] info_opponent = opponent.user_create(true);
-        opponent.user_print(info_opponent);
+        int[] opponent_info = characterIntInfo(opponent, true);
+
+        mine.attack(mine_info, opponent_info);
+    }
+
+    private static int[] characterIntInfo(Character character, boolean isOpponent) {
+        String[] info = character.user_create(isOpponent);
+        character.user_print(info);
+        return character.user_info_int(info);
     }
 }
