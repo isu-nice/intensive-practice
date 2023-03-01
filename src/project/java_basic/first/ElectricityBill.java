@@ -1,4 +1,4 @@
-package first;
+package java_basic.first;
 
 public class ElectricityBill {
     public static void main(String[] args) {

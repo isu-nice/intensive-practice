@@ -1,4 +1,4 @@
-package fourth;
+package java_basic.fourth;
 
 import java.util.Arrays;
 import java.util.Scanner;

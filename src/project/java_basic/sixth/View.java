@@ -1,4 +1,4 @@
-package sixth;
+package java_basic.sixth;
 
 public class View {
     private static final String CONTOUR = "-".repeat(30);

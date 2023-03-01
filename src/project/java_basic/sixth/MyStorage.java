@@ -1,4 +1,4 @@
-package sixth;
+package java_basic.sixth;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package fifth;
+package java_basic.fifth;
 
 import java.util.Scanner;
 
