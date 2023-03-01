@@ -10,9 +10,10 @@ import java.util.Scanner;
  * @hp :   유닛의 체력
  */
 class Character {
-    private static final int UNIT_NUMBER = 4;
-    private static final String SYSTEM = "[시스템] 유닛 %s 을 입력해 주세요. : ";
+    private static final String SYSTEM = "[시스템] 유닛 %s 을 입력해 주세요 : ";
     private static final String INFO = "[안내] %s\n";
+    private static final String[] UNITS = {"[이름]", "[공격력]", "[방어력]", "[체력]"};
+    private static final int UNIT_NUMBER = UNITS.length;
 
     // 사용자의 입력을 받기위한 객체 생성을 진행합니다.
     Scanner scanner = new Scanner(System.in);
@@ -36,7 +37,6 @@ class Character {
      */
     String[] user_create(boolean isOpponent) {
         String[] userInfo = new String[UNIT_NUMBER];
-        String[] units = {"[이름]", "[공격력]", "[방어력]", "[체력]"};
         //입력 메시지와 함께, 게임에 필요한 유닛의 정보를 입력받습니다.
         if (isOpponent) {
             System.out.printf(INFO, "상대의 유닛 정보를 입력해 주세요.");
@@ -44,9 +44,9 @@ class Character {
             System.out.printf(INFO, "자신의 유닛 정보를 입력해 주세요.");
         }
 
-        for (int a = 0; a < UNIT_NUMBER; a++) {
-            System.out.printf(SYSTEM, units[0]);
-            userInfo[a] = scanner.nextLine();
+        for (int i = 0; i < UNIT_NUMBER; i++) {
+            System.out.printf(SYSTEM, UNITS[i]);
+            userInfo[i] = scanner.nextLine();
         }
 
         // 입력된 값은 user_info()에 전달하여 줍니다.
@@ -60,7 +60,13 @@ class Character {
      * @user_print() : 입력된 배열을 통해 유닛 정보 출력
      */
     void user_print(String[] user) {
-        //TODO:
+        System.out.println();
+        System.out.printf(INFO, "생성된 유닛 정보는 다음과 같습니다.");
+        System.out.printf(INFO, String.format("%s 유닛이 게임에 참여했습니다.", user[0]));
+        for(int i = 1; i < UNIT_NUMBER; i++){
+            System.out.println(UNITS[i] + " : " + user[i]);
+        }
+        System.out.println("=".repeat(40));
     }
 
     /**
@@ -72,6 +78,7 @@ class Character {
         // 같은 형식의 반환을 위해 배열 선언
 
         // 배열의 값을 하나씩 꺼내 정수형태로 전환합니다.
+        return null;
 
     }
 
@@ -86,3 +93,4 @@ class Character {
         // 공격 정책 수식 : 적군 체력 -= 아군 유닛 공격력 / 적군 유닛 방어력
         //TODO:
     }
+}
