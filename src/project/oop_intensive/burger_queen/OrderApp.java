@@ -1,5 +1,9 @@
 package oop_intensive.burger_queen;
 
+import oop_intensive.burger_queen.discount.discountCondition.CozDiscountCondition;
+import oop_intensive.burger_queen.discount.discountCondition.KidDiscountCondition;
+import oop_intensive.burger_queen.discount.discountPolicy.FixedAmountDiscountPolicy;
+import oop_intensive.burger_queen.discount.discountPolicy.FixedRateDiscountPolicy;
 import oop_intensive.burger_queen.order.Cart;
 import oop_intensive.burger_queen.order.Menu;
 import oop_intensive.burger_queen.order.Order;
@@ -19,7 +23,10 @@ public class OrderApp {
 
         Menu menu = new Menu(products);
         Cart cart = new Cart(productRepository, menu);
-        Order order = new Order(cart);
+        Order order = new Order(cart, List.of(
+                new CozDiscountCondition(new FixedRateDiscountPolicy(10)),
+                new KidDiscountCondition(new FixedAmountDiscountPolicy(500))
+        ));
 
         System.out.println("🍔 BurgerQueen Order Service");
 
