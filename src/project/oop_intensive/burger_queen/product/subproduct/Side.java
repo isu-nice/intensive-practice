@@ -10,6 +10,11 @@ public class Side extends Product {
         this.ketchupNumber = ketchupNumber;
     }
 
+    public Side(Side side) {
+        super(side.getName(), side.getPrice(), side.getKcal());
+        this.ketchupNumber = side.getKetchupNumber();
+    }
+
     public int getKetchupNumber() {
         return ketchupNumber;
     }
