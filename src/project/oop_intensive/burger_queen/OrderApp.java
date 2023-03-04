@@ -1,32 +1,28 @@
 package oop_intensive.burger_queen;
 
-import oop_intensive.burger_queen.discount.discountCondition.CozDiscountCondition;
-import oop_intensive.burger_queen.discount.discountCondition.KidDiscountCondition;
-import oop_intensive.burger_queen.discount.discountPolicy.FixedAmountDiscountPolicy;
-import oop_intensive.burger_queen.discount.discountPolicy.FixedRateDiscountPolicy;
 import oop_intensive.burger_queen.order.Cart;
 import oop_intensive.burger_queen.order.Menu;
 import oop_intensive.burger_queen.order.Order;
-import oop_intensive.burger_queen.product.Product;
 import oop_intensive.burger_queen.product.ProductRepository;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class OrderApp {
+    private ProductRepository productRepository;
+    private Menu menu;
+    private Cart cart;
+    private Order order;
+
+    public OrderApp(ProductRepository productRepository, Menu menu, Cart cart, Order order) {
+        this.productRepository = productRepository;
+        this.menu = menu;
+        this.cart = cart;
+        this.order = order;
+    }
+
     public void run() {
 
         Scanner scanner = new Scanner(System.in);
-
-        ProductRepository productRepository = new ProductRepository();
-        List<Product> products = productRepository.getProducts();
-
-        Menu menu = new Menu(products);
-        Cart cart = new Cart(productRepository, menu);
-        Order order = new Order(cart, List.of(
-                new CozDiscountCondition(new FixedRateDiscountPolicy(10)),
-                new KidDiscountCondition(new FixedAmountDiscountPolicy(500))
-        ));
 
         System.out.println("🍔 BurgerQueen Order Service");
 
@@ -42,11 +38,11 @@ public class OrderApp {
 
                 if (menuNumber == 0) {
                     cart.printCart();
-                } else if (1 <= menuNumber && menuNumber <= products.size()) {
+                } else if (1 <= menuNumber && menuNumber <= productRepository.getProducts().size()) {
                     cart.addToCart(menuNumber);
                 }
             }
-
         }
+        System.out.println("[📣] 이용해주셔서 감사합니다.");
     }
 }
