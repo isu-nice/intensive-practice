@@ -1,13 +1,18 @@
 package oop_intensive.burger_queen.discount.discountCondition;
 
-import oop_intensive.burger_queen.discount.FixedRateDiscountPolicy;
+import oop_intensive.burger_queen.discount.discountPolicy.DiscountPolicy;
+import oop_intensive.burger_queen.discount.discountPolicy.FixedRateDiscountPolicy;
 
 import java.util.Scanner;
 
-public class CozDiscountCondition {
+public class CozDiscountCondition implements DiscountCondition{
 
     private boolean isSatisfied;
-    private FixedRateDiscountPolicy fixedRateDiscountPolicy = new FixedRateDiscountPolicy(10);
+    private DiscountPolicy discountPolicy;
+
+    public CozDiscountCondition(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
 
     public boolean isSatisfied() {
         return isSatisfied;
@@ -28,6 +33,6 @@ public class CozDiscountCondition {
     }
 
     public int applyDiscount(int price) {
-        return fixedRateDiscountPolicy.calculateDiscountedPrice(price);
+        return discountPolicy.calculateDiscountPolicy(price);
     }
 }
