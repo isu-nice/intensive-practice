@@ -1,6 +1,6 @@
-package oop_intensive.burger_queen.discount;
+package oop_intensive.burger_queen.discount.discountPolicy;
 
-public class FixedRateDiscountPolicy {
+public class FixedRateDiscountPolicy implements DiscountPolicy {
 
     private int discountRate;
 
@@ -8,7 +8,8 @@ public class FixedRateDiscountPolicy {
         this.discountRate = discountRate;
     }
 
-    public int calculateDiscountedPrice(int price) {
+    @Override
+    public int calculateDiscountPolicy(int price) {
         return price - (price * discountRate / 100);
     }
 }
