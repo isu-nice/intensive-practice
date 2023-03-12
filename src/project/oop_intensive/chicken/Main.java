@@ -8,6 +8,7 @@ public class Main {
                 appConfig.registerRestaurant(),
                 appConfig.registerOrder()
         );
+
         chickenNation.start();
     }
 }

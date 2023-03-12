@@ -30,6 +30,4 @@ public class RegisterRestaurant {
                 restaurantName, menuName, menuPrice);
         System.out.println(SYSTEM + "가게 등록이 정상 처리되었습니다.\n");
     }
-
-
 }
