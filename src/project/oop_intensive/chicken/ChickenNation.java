@@ -18,7 +18,7 @@ public class ChickenNation {
     public void start() {
         String input = "-1";
 
-        while (!input.equals("5")) {
+        while (true) {
             OutputView.printProgramInfo();
             input = InputView.getUserInput();
 
@@ -35,7 +35,8 @@ public class ChickenNation {
                 case "4":
                     break;
                 case "5":
-                    break;
+                    OutputView.printExitInfo();
+                    return;
                 default:
                     throw new IllegalArgumentException("");
             }
@@ -43,6 +44,4 @@ public class ChickenNation {
         }
 
     }
-
-
 }
