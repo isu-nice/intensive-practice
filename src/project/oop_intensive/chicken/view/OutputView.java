@@ -1,7 +1,6 @@
 package oop_intensive.chicken.view;
 
-import static oop_intensive.chicken.view.Guidance.CONTOUR;
-import static oop_intensive.chicken.view.Guidance.INFO;
+import static oop_intensive.chicken.view.Guidance.*;
 
 public class OutputView {
     public static void printProgramInfo() {
@@ -21,8 +20,8 @@ public class OutputView {
     }
 
     public static void printStars(int starNumber) {
-        for(int i = 0; i < starNumber; i++) {
-            System.out.print("⭐");
+        for (int i = 0; i < starNumber; i++) {
+            System.out.print(STAR);
         }
         System.out.println();
     }
