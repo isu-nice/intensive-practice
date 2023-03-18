@@ -7,7 +7,6 @@ public class Guidance {
     public static final String INFO = "[📢] ";
     public static final String INPUT = ">>> ";
     public static final String STAR = "⭐";
-
-
+    public static final String CUSTOMER = " [고객님]";
 }
 
