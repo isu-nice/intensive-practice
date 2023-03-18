@@ -7,9 +7,11 @@ import oop_intensive.chicken.restaurant.RestaurantRepository;
 import oop_intensive.chicken.star.ManageStar;
 import oop_intensive.chicken.star.StarRepository;
 
+import java.util.ArrayList;
+
 public class AppConfig {
-    private RestaurantRepository restaurantRepository = new RestaurantRepository();
-    private OrderRepository orderRepository = new OrderRepository();
+    private RestaurantRepository restaurantRepository = new RestaurantRepository(new ArrayList<>());
+    private OrderRepository orderRepository = new OrderRepository(new ArrayList<>());
     private StarRepository starRepository = new StarRepository(orderRepository());
 
     public RestaurantRepository restaurantRepository() {
@@ -25,7 +27,7 @@ public class AppConfig {
     }
 
     public RegisterOrder registerOrder() {
-        return new RegisterOrder(orderRepository());
+        return new RegisterOrder(orderRepository(), restaurantRepository());
     }
 
     public StarRepository starRepository() {
@@ -33,6 +35,6 @@ public class AppConfig {
     }
 
     public ManageStar manageStar() {
-        return new ManageStar(starRepository());
+        return new ManageStar(starRepository(), orderRepository());
     }
 }
