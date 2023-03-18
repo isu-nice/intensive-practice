@@ -7,7 +7,7 @@ public class Main {
         ChickenNation chickenNation = new ChickenNation(
                 appConfig.registerRestaurant(),
                 appConfig.registerOrder(),
-                appConfig.registerStar()
+                appConfig.manageStar()
         );
 
         chickenNation.start();

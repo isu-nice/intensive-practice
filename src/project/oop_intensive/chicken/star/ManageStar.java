@@ -4,10 +4,10 @@ import oop_intensive.chicken.view.InputView;
 
 import static oop_intensive.chicken.view.Guidance.INFO;
 
-public class RegisterStar {
+public class ManageStar {
     private StarRepository starRepository;
 
-    public RegisterStar(StarRepository starRepository) {
+    public ManageStar(StarRepository starRepository) {
         this.starRepository = starRepository;
     }
 
@@ -27,5 +27,9 @@ public class RegisterStar {
 
         starRepository.addStar(customerName, restaurantName, menuName, starNumber);
         System.out.println(INFO + "리뷰 등록이 완료되었습니다.");
+    }
+
+    public void check(){
+
     }
 }

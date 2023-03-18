@@ -20,5 +20,10 @@ public class OutputView {
         System.out.println(INFO + "이용해 주셔서 감사합니다.");
     }
 
-
+    public static void printStars(int starNumber) {
+        for(int i = 0; i < starNumber; i++) {
+            System.out.print("⭐");
+        }
+        System.out.println();
+    }
 }

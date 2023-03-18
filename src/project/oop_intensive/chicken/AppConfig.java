@@ -4,7 +4,7 @@ import oop_intensive.chicken.order.OrderRepository;
 import oop_intensive.chicken.order.RegisterOrder;
 import oop_intensive.chicken.restaurant.RegisterRestaurant;
 import oop_intensive.chicken.restaurant.RestaurantRepository;
-import oop_intensive.chicken.star.RegisterStar;
+import oop_intensive.chicken.star.ManageStar;
 import oop_intensive.chicken.star.StarRepository;
 
 public class AppConfig {
@@ -32,7 +32,7 @@ public class AppConfig {
         return starRepository;
     }
 
-    public RegisterStar registerStar() {
-        return new RegisterStar(starRepository());
+    public ManageStar manageStar() {
+        return new ManageStar(starRepository());
     }
 }
