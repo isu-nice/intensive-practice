@@ -1,13 +1,13 @@
 package oop_intensive.chicken.order;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class OrderRepository {
     private List<Order> orders;
 
-    public OrderRepository() {
-        this.orders = new ArrayList<>();
+    public OrderRepository(List<Order> orders) {
+        this.orders = orders;
     }
 
     public Order find(String customerName, String restaurantName, String menuName) {
@@ -21,5 +21,9 @@ public class OrderRepository {
 
     public void addOrder(Order order) {
         orders.add(order);
+    }
+
+    public List<Order> getOrders() {
+        return Collections.unmodifiableList(orders);
     }
 }
